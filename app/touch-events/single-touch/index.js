@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Dimensions, StatusBar } from "react-native";
-import { BasicGameLoop } from "react-native-game-engine";
+import { GameLoop } from "react-native-game-engine";
 import Worm from "./worm";
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
@@ -26,13 +26,13 @@ export default class SingleTouch extends Component {
 
   render() {
     return (
-      <BasicGameLoop style={styles.container} onUpdate={this.onUpdate}>
+      <GameLoop style={styles.container} onUpdate={this.onUpdate}>
 
         <StatusBar hidden={true} />
 
         <Worm {...this.state} />
 
-      </BasicGameLoop>
+      </GameLoop>
     );
   }
 }

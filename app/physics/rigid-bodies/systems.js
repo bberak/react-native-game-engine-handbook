@@ -8,7 +8,7 @@ const distance = ([x1, y1], [x2, y2]) =>
 	Math.sqrt(Math.abs(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)));
 
 const Physics = (state, { touches, time }) => {
-	let engine = state["engine"].engine;
+	let engine = state["physics"].engine;
 
 	Matter.Engine.update(engine, time.delta);
 
@@ -16,7 +16,7 @@ const Physics = (state, { touches, time }) => {
 };
 
 const CreateBox = (state, { touches, screen }) => {
-	let world = state["world"].world;
+	let world = state["physics"].world;
 	let boxSize = Math.trunc(Math.max(screen.width, screen.height) * 0.075);
 
 	touches.filter(t => t.type === "press").forEach(t => {
@@ -41,7 +41,7 @@ const CreateBox = (state, { touches, screen }) => {
 };
 
 const MoveBox = (state, { touches }) => {
-	let constraint = state["constraint"].constraint;
+	let constraint = state["physics"].constraint;
 
 	//-- Handle start touch
 	let start = touches.find(x => x.type === "start" && x.id === 1);
@@ -86,7 +86,7 @@ const MoveBox = (state, { touches }) => {
 };
 
 const CleanBoxes = (state, { touches, screen }) => {
-	let world = state["world"].world;
+	let world = state["physics"].world;
 
 	Object.keys(state)
 		.filter(key => state[key].body && state[key].body.position.y > screen.height * 2)

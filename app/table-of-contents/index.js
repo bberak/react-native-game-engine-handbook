@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StatusBar, View, StyleSheet, ScrollView, Image } from "react-native";
-import { ComponentEntitySystem } from "react-native-game-engine";
+import { GameEngine } from "react-native-game-engine";
 import { ParticleSystem } from "./renderers";
 import {
   SpawnParticles,
@@ -101,7 +101,7 @@ export default class TableOfContents extends Component {
         style={css.linearGradient}
       >
 
-        <ComponentEntitySystem
+        <GameEngine
           ref={"engine"}
           systems={[
             SpawnParticles,
@@ -156,7 +156,7 @@ export default class TableOfContents extends Component {
 
           </ScrollView>
 
-        </ComponentEntitySystem>
+        </GameEngine>
 
       </LinearGradient>
     );

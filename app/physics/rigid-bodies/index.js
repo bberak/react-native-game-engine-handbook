@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StatusBar, Dimensions } from "react-native";
-import { ComponentEntitySystem } from "react-native-game-engine";
+import { GameEngine } from "react-native-game-engine";
 import { Physics, CreateBox, MoveBox, CleanBoxes } from "./systems";
 import { Box } from "./renderers";
 import Matter from "matter-js";
@@ -33,12 +33,10 @@ export default class RigidBodies extends Component {
     Matter.World.addConstraint(world, constraint);
 
     return (
-      <ComponentEntitySystem
+      <GameEngine
         systems={[Physics, CreateBox, MoveBox, CleanBoxes]}
         entities={{
-          engine: { engine: engine },
-          world: { world: world },
-          constraint: { constraint: constraint },
+          physics: { engine: engine, world: world, constraint: constraint },
           box: { body: body, size: [boxSize, boxSize], color: "pink", renderer: Box },
           floor: { body: floor, size: [width, boxSize], color: "#86E9BE", renderer: Box }
         }}
@@ -46,7 +44,7 @@ export default class RigidBodies extends Component {
 
         <StatusBar hidden={true} />
 
-      </ComponentEntitySystem>
+      </GameEngine>
     );
   }
 }

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import {
   StatusBar,
-  Platform,
-  UIManager
+  Platform
 } from "react-native";
-import { ComponentEntitySystem } from "react-native-game-engine";
+import { GameEngine } from "react-native-game-engine";
 import {
   SpawnWorm,
   AssignFingerToWorm,
@@ -16,16 +15,11 @@ import {
 export default class MultiTouch extends Component {
   constructor() {
     super();
-
-    if (Platform.OS === "android") {
-      UIManager.setLayoutAnimationEnabledExperimental &&
-        UIManager.setLayoutAnimationEnabledExperimental(true);
-    }
   }
 
   render() {
     return (
-      <ComponentEntitySystem
+      <GameEngine
         systems={[
           SpawnWorm,
           AssignFingerToWorm,
@@ -38,7 +32,7 @@ export default class MultiTouch extends Component {
 
         <StatusBar hidden={true} />
 
-      </ComponentEntitySystem>
+      </GameEngine>
     );
   }
 }

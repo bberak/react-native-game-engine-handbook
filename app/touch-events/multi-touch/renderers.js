@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { StyleSheet, View, LayoutAnimation, Dimensions } from "react-native";
+import { StyleSheet, View, Dimensions } from "react-native";
 import { StaggeredMotion, spring } from "react-motion";
 import * as Animatable from "react-native-animatable";
 
@@ -23,23 +23,6 @@ class Worm extends PureComponent {
       ready: true
     });
   };
-
-  componentWillUnmount() {
-    var CustomLayoutSpring = {
-      duration: 900,
-      delete: {
-        type: LayoutAnimation.Types.spring,
-        property: LayoutAnimation.Properties.opacity,
-        springDamping: 0.4
-      },
-      create: {
-        type: LayoutAnimation.Types.spring,
-        property: LayoutAnimation.Properties.opacity,
-        springDamping: 0.4
-      }
-    };
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
-  }
 
   render() {
     const x = this.props.position[0] - BODY_DIAMETER / 2;
@@ -87,7 +70,7 @@ class Worm extends PureComponent {
                       width: BODY_DIAMETER - i * 5,
                       height: BODY_DIAMETER - i * 5,
                       zIndex: 0 - i,
-                      //-- Hide the body parts until the head is finished animating
+                      //-- Lines below hides the body parts until the head is finished animating
                       //opacity: this.state.ready ? 1 : 0
                     }
                   ]}

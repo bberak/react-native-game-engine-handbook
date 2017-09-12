@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StatusBar, Dimensions } from "react-native";
-import { ComponentEntitySystem } from "react-native-game-engine";
+import { GameEngine } from "react-native-game-engine";
 import { Physics, CreateBox, MoveBox, CleanBoxes, Shake } from "./systems";
 import { Box } from "./renderers";
 import Matter from "matter-js";
@@ -45,7 +45,7 @@ export default class AccelerometerExample extends Component {
     Matter.World.addConstraint(world, constraint);
 
     return (
-      <ComponentEntitySystem
+      <GameEngine
         ref={"engine"}
         systems={[Physics, CreateBox, MoveBox, CleanBoxes, Shake]}
         entities={{
@@ -59,7 +59,7 @@ export default class AccelerometerExample extends Component {
 
         <StatusBar hidden={true} />
 
-      </ComponentEntitySystem>
+      </GameEngine>
     );
   }
 }

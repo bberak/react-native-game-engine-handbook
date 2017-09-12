@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { AppRegistry, View, Modal } from "react-native";
-import TableOfContents from "./app/table-of-contents";
 import CloseButton from "./app/table-of-contents/closeButton";
+import EStyleSheet from "react-native-extended-stylesheet";
+
+import TableOfContents from "./app/table-of-contents";
 import TouchChapter from "./app/touch-events";
 import PhysicsChapter from "./app/physics";
 import SensorsChapter from "./app/sensors";
 import ExamplesChapter from "./app/examples";
-import EStyleSheet from "react-native-extended-stylesheet";
 
 EStyleSheet.build();
 
