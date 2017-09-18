@@ -97,7 +97,7 @@ export default class TableOfContents extends Component {
 
     return (
       <LinearGradient
-        colors={["#271E77", "#C96DD8"]}
+        colors={["#62B5BF", "#8262BF", "#5F5375"]}
         style={css.linearGradient}
       >
 
