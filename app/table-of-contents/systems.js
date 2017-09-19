@@ -1,6 +1,6 @@
 
 const COLORS = ["#FFF"];
-const GRAVITY = [-0.035, 0.05];
+const GRAVITY = [0, 0.05];
 
 const random = (min = 0, max = 1) => {
   return Math.random() * (max - min) + min;
@@ -13,7 +13,7 @@ const SpawnParticles = (state,  { screen }) => {
 	Object.keys(state).filter(key => state[key].particles).forEach(key => {
 		let sys = state[key];
 		sys.particles.push({
-			position: [random(screen.width / 2, screen.width * 1.5), -50],
+			position: [random(0, screen.width), -50],
 			velocity: GRAVITY,
 			mass: random(),
 			lifespan: 148,
