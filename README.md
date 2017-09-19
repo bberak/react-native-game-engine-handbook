@@ -1,4 +1,6 @@
-# <p align="center"><img src='https://raw.githubusercontent.com/bberak/react-native-game-engine-handbook/master/app/table-of-contents/images/logo-alt%402x.png?raw=true' alt="React Native Game Engine Handbook" height='80' /></p>
+<p align="center"><img src='https://raw.githubusercontent.com/bberak/react-native-game-engine-handbook/master/app/table-of-contents/images/logo-alt%402x.png?raw=true' alt="React Native Game Engine Handbook" height='100' /></p>
+
+<hr />
 
 A React Native app showcasing some examples using the lightweight [react-native-game-engine](https://github.com/bberak/react-native-game-engine) library.
 
@@ -16,6 +18,8 @@ react-native link
 react-native run-ios
 ```
 
+> Use ```react-native run-ios --configuration Release``` for release build (better performance).
+
 ## Quick Start Android
 
 ```
@@ -29,3 +33,5 @@ react-native link
 
 react-native run-android
 ```
+
+> Installing a release build on an Android device is slightly more involved (requires signing). See [running on device](https://facebook.github.io/react-native/docs/running-on-device.html) for details.
