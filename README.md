@@ -1,8 +1,15 @@
-<a href="https://github.com/bberak/react-native-game-engine-handbook"><p align="center"><img src='https://raw.githubusercontent.com/bberak/react-native-game-engine-handbook/master/app/table-of-contents/images/logo-alt%402x.png?raw=true' alt="React Native Game Engine Handbook" height='120' /></p></a>
-
-# React Native Game Engine Handbook &middot; [![mit license](https://img.shields.io/badge/license-MIT-50CB22.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+	<img src="https://raw.githubusercontent.com/bberak/react-native-game-engine-handbook/master/app/table-of-contents/images/logo-alt%402x.png" alt="React Native Game Engine Handbook" height="120" />
+</p>
 
 A React Native app showcasing some examples using the lightweight [react-native-game-engine](https://github.com/bberak/react-native-game-engine) library.
+
+<p align="center">
+	<img src="https://raw.githubusercontent.com/bberak/react-native-game-engine-handbook/master/assets/single-touch.gif" height="400" />
+	<img src="https://raw.githubusercontent.com/bberak/react-native-game-engine-handbook/master/assets/multi-touch.gif" height="400" />
+	<img src="https://raw.githubusercontent.com/bberak/react-native-game-engine-handbook/master/assets/rigid-bodies.gif" height="400" />
+</p>
+
 
 ## Quick Start iOS
 
