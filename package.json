@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "art": "^0.10.1",
+    "gl-react": "^3.13.0",
+    "gl-react-native": "^3.13.0",
     "lodash": "^4.17.4",
     "matter-js": "^0.13.0",
     "react": "16.0.0-alpha.12",
@@ -15,10 +17,11 @@
     "react-native": "0.48.1",
     "react-native-animatable": "^1.2.2",
     "react-native-extended-stylesheet": "git+https://github.com/bberak/react-native-extended-stylesheet.git",
-    "react-native-game-engine": "^0.6.6",
+    "react-native-game-engine": "git+https://github.com/bberak/react-native-game-engine.git",
     "react-native-linear-gradient": "^2.0.0",
     "react-native-sensors": "^2.3.1",
-    "react-native-svg": "^5.2.0"
+    "react-native-svg": "^5.2.0",
+    "react-native-webgl": "^0.6.0"
   },
   "devDependencies": {
     "babel-jest": "21.0.0",
