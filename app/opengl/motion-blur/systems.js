@@ -1,23 +1,12 @@
+let rotateBy = 0.01;
 
-let hold = false;
+const Rotate = (entities, { touches }) => {
+	let move = touches.find(x => x.type === "move");
 
-const DetectHold = (entities, { touches, events }) => {
+	if (move)
+		rotateBy += move.delta.pageX * 0.005;
 
-	if (touches.find(x => x.type === "start"))
-		hold = true;
-
-	if (touches.find(x => x.type === "end"))
-		hold = false;
-
-	if (hold)
-		events.push({ type: "hold"})
-
-	return entities;
-}
-
-const Rotate = (entities, { events }) => {
-
-	entities.square.angle += events.find(x => x.type === "hold") ? 0.5 : 0.01;
+	entities.square.angle += rotateBy
 
 	return entities;
 }
@@ -25,11 +14,10 @@ const Rotate = (entities, { events }) => {
 const Scale = (entities, { touches }) => {
 	let move = touches.find(x => x.type === "move");
 
-	if (move) {
-		entities.square.scale += move.delta.pageY * 0.01;
-	}
+	if (move)
+		entities.square.scale += move.delta.pageY * 0.005;
 
 	return entities;
 }
 
-export { DetectHold, Rotate, Scale };
+export { Rotate, Scale };

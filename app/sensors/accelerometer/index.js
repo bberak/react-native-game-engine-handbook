@@ -11,7 +11,7 @@ Matter.Common.isElement = () => false; //-- Overriding this function because the
 export default class AccelerometerExample extends Component {
   constructor() {
     super();
-    this.accelerometer = new Accelerometer({ updateInterval: 100 });
+    this.accelerometer = new Accelerometer({ updateInterval: 16 });
   }
 
   componentDidMount() {

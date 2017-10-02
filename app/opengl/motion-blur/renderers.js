@@ -84,7 +84,7 @@ class Square extends PureComponent {
     return (
       <View style={css.container}>
         <Surface style={{ width: size, height: size }}>
-          <MotionBlur persistence={0.56}>
+          <MotionBlur persistence={0.76}>
             <Rotate scale={this.props.scale} angle={this.props.angle}>
               <HelloGL blue={0.5} />
             </Rotate>

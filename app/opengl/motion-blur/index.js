@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { AppRegistry, StyleSheet, StatusBar } from "react-native";
 import { GameEngine } from "react-native-game-engine";
 import { Square } from "./renderers";
-import { DetectHold, Rotate, Scale } from "./systems"
+import { Rotate, Scale } from "./systems"
 
 export default class MotionBlueExample extends PureComponent {
   constructor() {
@@ -13,7 +13,7 @@ export default class MotionBlueExample extends PureComponent {
     return (
       <GameEngine 
         style={styles.container} 
-        systems={[DetectHold, Rotate, Scale]}
+        systems={[Rotate, Scale]}
         entities={{ 
           square: { angle: 0, scale: 0.5, renderer: <Square />}
         }}>
