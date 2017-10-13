@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "art": "^0.10.1",
+    "bunny": "^1.0.1",
+    "gl-mat4": "^1.1.4",
     "gl-react": "^3.13.0",
     "gl-react-native": "^3.13.0",
     "lodash": "^4.17.4",
@@ -21,7 +23,8 @@
     "react-native-linear-gradient": "^2.0.0",
     "react-native-sensors": "^2.3.1",
     "react-native-svg": "^5.2.0",
-    "react-native-webgl": "^0.6.0"
+    "react-native-webgl": "^0.6.0",
+    "regl": "^1.3.0"
   },
   "devDependencies": {
     "babel-jest": "21.0.0",
