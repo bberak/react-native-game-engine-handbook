@@ -1,28 +1,33 @@
-import React, { PureComponent, Component } from "react";
+import React, { PureComponent } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { WebGLView } from "react-native-webgl";
 import REGL from "regl";
 import mat4 from "gl-mat4";
 import bunny from "bunny";
 
-class ReglView extends Component {
+class ReglView extends PureComponent {
   constructor() {
     super();
     this.state = {};
   }
 
   onContextCreate = gl => {
+    const regl = REGL(gl);
+    const rngl = gl.getExtension("RN");
+    const clear = this.props.clearCommand(regl, rngl);
+    const draw = this.props.drawCommand(regl, rngl);
+
     this.setState({
-      regl: REGL(gl),
-      rngl: gl.getExtension("RN")
+      frame: props => {
+        clear(props);
+        draw(props);
+        rngl.endFrame();
+      }
     });
   };
 
   render() {
-    if (this.props.draw && this.state.regl && this.state.rngl) {
-      this.props.draw(this.state.regl);
-      this.state.rngl.endFrame();
-    }
+    if (this.state.frame) this.state.frame(this.props.passProps);
 
     return (
       <WebGLView
@@ -34,13 +39,8 @@ class ReglView extends Component {
 }
 
 class Bunny extends PureComponent {
-  draw = regl => {
-    regl.clear({
-      depth: 1,
-      color: [0, 0, 0, 1]
-    });
-
-    regl({
+  drawCommand = regl => {
+    return regl({
       vert: `
         precision mediump float;
         attribute vec3 position;
@@ -65,16 +65,14 @@ class Bunny extends PureComponent {
 
       uniforms: {
         model: mat4.identity([]),
-        view: mat4.lookAt(
-          [],
-          [
-            30 * Math.cos(this.props.angle),
-            2.5,
-            30 * Math.sin(this.props.angle)
-          ],
-          [0, 2.5, 0],
-          [0, 1, 0]
-        ),
+        view: (_, { angle }) => {
+          return mat4.lookAt(
+            [],
+            [30 * Math.cos(angle), 2.5, 30 * Math.sin(angle)],
+            [0, 2.5, 0],
+            [0, 1, 0]
+          );
+        },
         projection: ({ viewportWidth, viewportHeight }) =>
           mat4.perspective(
             [],
@@ -84,11 +82,27 @@ class Bunny extends PureComponent {
             1000
           )
       }
-    })();
+    });
+  };
+
+  clearCommand = regl => {
+    return props => {
+      regl.clear({
+        depth: 1,
+        color: [0, 0, 0, 1]
+      });
+    };
   };
 
   render() {
-    return <ReglView style={StyleSheet.absoluteFill} draw={this.draw} />;
+    return (
+      <ReglView
+        style={StyleSheet.absoluteFill}
+        drawCommand={this.drawCommand}
+        clearCommand={this.clearCommand}
+        passProps={this.props}
+      />
+    );
   }
 }
 

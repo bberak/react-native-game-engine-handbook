@@ -4,7 +4,7 @@ import { GameEngine } from "react-native-game-engine";
 import { Bunny } from "./renderers";
 import { Rotate } from "./systems"
 
-export default class MotionBlueExample extends PureComponent {
+export default class StanfordBunnyExample extends PureComponent {
   constructor() {
     super();
   }

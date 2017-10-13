@@ -1,6 +1,7 @@
 import React from "react";
 import MotionBlurExample from "./motion-blur";
-import ReglExmaple from "./regl"
+import StanfordBunnyExmaple from "./stanford-bunny";
+import GameOfLifeExample from "./game-of-life";
 
 export default function (mount) {
 	return {
@@ -11,8 +12,12 @@ export default function (mount) {
 				onPress: _ => mount(<MotionBlurExample />)
 			},
 			{
-				heading: "Regl",
-				onPress: _ => mount(<ReglExmaple />)
+				heading: "Stanford Bunny",
+				onPress: _ => mount(<StanfordBunnyExmaple />)
+			},
+			{
+				heading: "Game of Life",
+				onPress: _ => mount(<GameOfLifeExample />)
 			}
 		]
 	}
