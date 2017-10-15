@@ -15,7 +15,7 @@ export default class StanfordBunnyExample extends PureComponent {
         style={styles.container} 
         systems={[Rotate]}
         entities={{ 
-          bunny: { angle: 0, renderer: <Bunny />}
+          bunny: { angle: 0, renderer: <Bunny /> }
         }}>
 
         <StatusBar hidden={true} />

@@ -5,7 +5,7 @@ import REGL from "regl";
 import mat4 from "gl-mat4";
 import bunny from "bunny";
 
-class ReglView extends PureComponent {
+class ReglView extends Component {
   constructor() {
     super();
     this.state = {};
@@ -27,7 +27,7 @@ class ReglView extends PureComponent {
   };
 
   render() {
-    if (this.state.frame) this.state.frame(this.props.passProps);
+    if (this.state.frame) this.state.frame(this.props);
 
     return (
       <WebGLView
@@ -132,7 +132,6 @@ class GameOfLife extends Component {
         style={StyleSheet.absoluteFill}
         drawCommand={this.drawCommand}
         clearCommand={this.clearCommand}
-        passProps={this.props}
       />
     );
   }

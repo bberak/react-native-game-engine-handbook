@@ -13,7 +13,7 @@ export default class GameOfLifeExample extends PureComponent {
       <GameEngine 
         style={styles.container} 
         entities={{ 
-          gol: { renderer: <GameOfLife />}
+          gol: { renderer: <GameOfLife /> }
         }}>
 
         <StatusBar hidden={true} />

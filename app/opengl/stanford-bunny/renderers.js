@@ -27,7 +27,7 @@ class ReglView extends PureComponent {
   };
 
   render() {
-    if (this.state.frame) this.state.frame(this.props.passProps);
+    if (this.state.frame) this.state.frame(this.props);
 
     return (
       <WebGLView
@@ -100,7 +100,7 @@ class Bunny extends PureComponent {
         style={StyleSheet.absoluteFill}
         drawCommand={this.drawCommand}
         clearCommand={this.clearCommand}
-        passProps={this.props}
+        {...this.props}
       />
     );
   }
