@@ -19,7 +19,7 @@
     "react-native": "0.48.1",
     "react-native-animatable": "^1.2.2",
     "react-native-extended-stylesheet": "git+https://github.com/bberak/react-native-extended-stylesheet.git",
-    "react-native-game-engine": "git+https://github.com/bberak/react-native-game-engine.git",
+    "react-native-game-engine": "git+https://github.com/bberak/react-native-game-engine.git#pluggable-renderers",
     "react-native-linear-gradient": "^2.0.0",
     "react-native-sensors": "^2.3.1",
     "react-native-svg": "^5.2.0",

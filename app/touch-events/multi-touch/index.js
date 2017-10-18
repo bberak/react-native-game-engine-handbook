@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import {
-  StatusBar,
-  Platform
-} from "react-native";
+import { StatusBar } from "react-native";
 import { GameEngine } from "react-native-game-engine";
 import {
   SpawnWorm,
@@ -29,9 +26,7 @@ export default class MultiTouch extends Component {
         ]}
         entities={{}}
       >
-
         <StatusBar hidden={true} />
-
       </GameEngine>
     );
   }

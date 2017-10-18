@@ -46,8 +46,8 @@ export default class RNGEHandbook extends Component {
               TouchChapter(this.mountScene),
               PhysicsChapter(this.mountScene),
               SensorsChapter(this.mountScene),
-              ExamplesChapter(this.mountScene),
-              OpenGLChapter(this.mountScene)
+              OpenGLChapter(this.mountScene),
+              ExamplesChapter(this.mountScene)
             ]
           }}
         />

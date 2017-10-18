@@ -2,6 +2,7 @@ import React from "react";
 import MotionBlurExample from "./motion-blur";
 import StanfordBunnyExmaple from "./stanford-bunny";
 import GameOfLifeExample from "./game-of-life";
+import OverrideRendererExample from "../examples/override-renderer";
 
 export default function (mount) {
 	return {
@@ -18,6 +19,10 @@ export default function (mount) {
 			{
 				heading: "Game of Life",
 				onPress: _ => mount(<GameOfLifeExample />)
+			},
+			{
+				heading: "OpenGL Renderer",
+				onPress: _ => mount(<OverrideRendererExample />)
 			}
 		]
 	}

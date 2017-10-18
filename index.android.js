@@ -8,6 +8,7 @@ import TouchChapter from "./app/touch-events";
 import PhysicsChapter from "./app/physics";
 import SensorsChapter from "./app/sensors";
 import ExamplesChapter from "./app/examples";
+import OpenGLChapter from "./app/opengl";
 
 EStyleSheet.build();
 
@@ -45,6 +46,7 @@ export default class RNGEHandbook extends Component {
               TouchChapter(this.mountScene),
               PhysicsChapter(this.mountScene),
               SensorsChapter(this.mountScene),
+              OpenGLChapter(this.mountScene),
               ExamplesChapter(this.mountScene)
             ]
           }}
