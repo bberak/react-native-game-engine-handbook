@@ -67,7 +67,7 @@ class Bunny extends PureComponent {
         model: (_, { yaw, pitch }) => {
           return mat4.translate(
             [],
-            mat4.rotateX([], mat4.rotateY([], mat4.identity([]), yaw), pitch),
+            mat4.rotateY([], mat4.rotateX([], mat4.identity([]), pitch), yaw),
             [0, -2.5, 0]
           );
         },
