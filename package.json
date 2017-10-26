@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "angle-normals": "^1.0.0",
     "art": "^0.10.1",
     "bunny": "^1.0.1",
     "gl-mat4": "^1.1.4",

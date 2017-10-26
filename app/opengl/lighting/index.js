@@ -4,7 +4,7 @@ import { GameEngine } from "react-native-game-engine";
 import { Bunny } from "./renderers";
 import { Rotate } from "./systems"
 
-export default class StanfordBunnyExample extends PureComponent {
+export default class LightingExample extends PureComponent {
   constructor() {
     super();
   }

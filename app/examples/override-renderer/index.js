@@ -17,7 +17,6 @@ export default class OverrideRendererExample extends PureComponent {
         renderer={WebglRenderer}
         entities={{
           bunny: { angle: 0, renderer: Bunny },
-          //bunny2: { angle: 0, renderer: Bunny }
         }}
       >
         <StatusBar hidden={true} />

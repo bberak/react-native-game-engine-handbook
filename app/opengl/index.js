@@ -3,6 +3,7 @@ import MotionBlurExample from "./motion-blur";
 import StanfordBunnyExmaple from "./stanford-bunny";
 import GameOfLifeExample from "./game-of-life";
 import OverrideRendererExample from "../examples/override-renderer";
+import LightingExample from "./lighting"
 
 export default function (mount) {
 	return {
@@ -15,6 +16,10 @@ export default function (mount) {
 			{
 				heading: "Stanford Bunny",
 				onPress: _ => mount(<StanfordBunnyExmaple />)
+			},
+			{
+				heading: "Lighting",
+				onPress: _ => mount(<LightingExample />)
 			},
 			{
 				heading: "Game of Life",

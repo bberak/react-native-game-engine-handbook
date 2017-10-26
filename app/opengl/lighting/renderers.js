@@ -4,6 +4,9 @@ import { WebGLView } from "react-native-webgl";
 import REGL from "regl";
 import mat4 from "gl-mat4";
 import bunny from "bunny";
+import normals from "angle-normals";
+
+const t = 200;
 
 class ReglView extends PureComponent {
   constructor() {
@@ -43,24 +46,39 @@ class Bunny extends PureComponent {
     return regl({
       vert: `
         precision mediump float;
-        attribute vec3 position;
+        attribute vec3 position, normal;
         uniform mat4 model, view, projection;
+        varying vec3 fragNormal, fragPosition;
         void main() {
+          fragNormal = normal;
+          fragPosition = position;
           gl_Position =  projection * view * model * vec4(position, 1);
         }`,
 
       frag: `
         precision mediump float;
+        struct Light {
+          vec3 color;
+          vec3 position;
+        };
+        uniform Light lights[4];
+        varying vec3 fragNormal, fragPosition;
         void main() {
-          gl_FragColor = vec4(1, 1, 1, 1);
+          vec3 normal = normalize(fragNormal);
+          vec3 light = vec3(0, 0, 0);
+          for (int i = 0; i < 4; ++i) {
+            vec3 lightDir = normalize(lights[i].position - fragPosition);
+            float diffuse = max(0.0, dot(lightDir, normal));
+            light += diffuse * lights[i].color;
+          }
+          gl_FragColor = vec4(light, 1);
         }`,
 
-      // this converts the vertices of the mesh into the position attribute
       attributes: {
-        position: bunny.positions
+        position: bunny.positions,
+        normal: normals(bunny.cells, bunny.positions)
       },
 
-      // and this converts the faces of the mesh into elements
       elements: bunny.cells,
 
       uniforms: {
@@ -79,7 +97,31 @@ class Bunny extends PureComponent {
             viewportWidth / viewportHeight,
             0.01,
             1000
-          )
+          ),
+        "lights[0].color": [1, 0, 0],
+        "lights[1].color": [0, 1, 0],
+        "lights[2].color": [0, 0, 1],
+        "lights[3].color": [1, 1, 0],
+        "lights[0].position": [
+          10 * Math.cos(0.09 * t),
+          10 * Math.sin(0.09 * (2 * t)),
+          10 * Math.cos(0.09 * (3 * t))
+        ],
+        "lights[1].position": [
+          10 * Math.cos(0.05 * (5 * t + 1)),
+          10 * Math.sin(0.05 * (4 * t)),
+          10 * Math.cos(0.05 * (0.1 * t))
+        ],
+        "lights[2].position": [
+          10 * Math.cos(0.05 * (9 * t)),
+          10 * Math.sin(0.05 * (0.25 * t)),
+          10 * Math.cos(0.05 * (4 * t))
+        ],
+        "lights[3].position": [
+          10 * Math.cos(0.1 * (0.3 * t)),
+          10 * Math.sin(0.1 * (2.1 * t)),
+          10 * Math.cos(0.1 * (1.3 * t))
+        ]
       }
     });
   };
