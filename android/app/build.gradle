@@ -95,7 +95,7 @@ android {
 
     defaultConfig {
         applicationId "com.rngehandbook"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"

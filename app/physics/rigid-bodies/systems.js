@@ -44,7 +44,7 @@ const MoveBox = (state, { touches }) => {
 	let constraint = state["physics"].constraint;
 
 	//-- Handle start touch
-	let start = touches.find(x => x.type === "start" && x.id === 1);
+	let start = touches.find(x => x.type === "start");
 
 	if (start) {
 		let startPos = [start.event.pageX, start.event.pageY];
@@ -67,14 +67,14 @@ const MoveBox = (state, { touches }) => {
 	}
 
 	//-- Handle move touch
-	let move = touches.find(x => x.type === "move" && x.id === 1);
+	let move = touches.find(x => x.type === "move");
 
 	if (move) {
 		constraint.pointA = { x: move.event.pageX, y: move.event.pageY };
 	}
 
 	//-- Handle end touch
-	let end = touches.find(x => x.type === "end" && x.id === 1);
+	let end = touches.find(x => x.type === "end");
 
 	if (end) {
 		constraint.pointA = null;

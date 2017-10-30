@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Platform } from "react-native";
 import * as Animatable from "react-native-animatable";
 import EStyleSheet from "react-native-extended-stylesheet";
 import Back from "./images/back.png";
@@ -63,7 +63,7 @@ export default class BackButton extends Component {
 
 const css = EStyleSheet.create({
   container: {
-    marginLeft: -20,
+    marginLeft: Platform.OS === 'ios' ? -20 : undefined,
     marginRight: 20
   }
 });
