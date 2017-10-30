@@ -40,6 +40,10 @@ npm install
 
 react-native link
 
+# Download Android NDK version r15c from https://developer.android.com/ndk/downloads/index.html
+# Unzip the the NDK into /usr/local/share/android-ndk-r15c
+# IF you unzip into a different location, update the android/local.properties file with the correct path
+
 react-native run-android
 ```
 
