@@ -27,11 +27,6 @@ export default class TableOfContents extends Component {
     };
   }
 
-  componentWillReceiveProps = newProps => {
-    if (newProps.sceneVisible) this.refs.engine.stop();
-    else this.refs.engine.start();
-  };
-
   onItemPress = async data => {
     if (data.items) {
       let refs = [this.state.heading, "back"].concat(
@@ -103,6 +98,7 @@ export default class TableOfContents extends Component {
 
         <GameEngine
           ref={"engine"}
+          running={!this.props.sceneVisible}
           systems={[
             SpawnParticles,
             Gravity,
