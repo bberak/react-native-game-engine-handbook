@@ -19,6 +19,7 @@
     "react-motion": "^0.5.0",
     "react-native": "0.48.1",
     "react-native-animatable": "^1.2.2",
+    "react-native-donkey-kong": "^0.5.1",
     "react-native-extended-stylesheet": "git+https://github.com/bberak/react-native-extended-stylesheet.git",
     "react-native-game-engine": "git+https://github.com/bberak/react-native-game-engine.git#updating-state",
     "react-native-linear-gradient": "^2.0.0",

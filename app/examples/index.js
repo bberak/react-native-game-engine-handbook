@@ -1,6 +1,7 @@
 import React from "react";
 import GameEngineExample from "./game-engine";
 import OverrideRendererExample from "./override-renderer";
+import DonkeyKong from "react-native-donkey-kong";
 
 export default function (mount) {
 	return {
@@ -13,6 +14,10 @@ export default function (mount) {
 			{
 				heading: "Override Renderer",
 				onPress: _ => mount(<OverrideRendererExample />)
+			},
+			{
+				heading: "DonkeyKong",
+				onPress: _ => mount(<DonkeyKong />)
 			}
 		]
 	}
