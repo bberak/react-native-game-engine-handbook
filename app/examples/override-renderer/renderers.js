@@ -27,7 +27,7 @@ class ReglView extends PureComponent {
         if (this.props.children)
           this.props.children.forEach(entity => entity.renderer(regl)(entity));
 
-        rngl.endFrame();
+        gl.endFrameEXP();
       }
     });
   };

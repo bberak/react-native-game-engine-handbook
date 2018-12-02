@@ -21,7 +21,7 @@ class ReglView extends Component {
       frame: props => {
         clear(props);
         draw(props);
-        rngl.endFrame();
+        gl.endFrameEXP();
       }
     });
   };
