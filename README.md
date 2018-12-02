@@ -12,42 +12,21 @@ A React Native app showcasing some examples using the lightweight [react-native-
     <img src="https://raw.githubusercontent.com/bberak/react-native-game-engine-handbook/master/assets/rigid-bodies.gif" alt="Rigid Bodies Preview" height="450" />
 </p>
 
-
-## Quick Start iOS
+## Quick Start Expo (iOS and Android)
 
 ```
-git clone https://github.com/bberak/react-native-game-engine-handbook.git
+npm install -g expo-cli
+
+git clone https://github.com/bberak/react-native-game-engine-handbook.git#expo
 
 cd react-native-game-engine-handbook
 
 npm install
 
-react-native link
+npm run start
 
-react-native run-ios
+# Then follow the Expo prompts to run on a device or simulator
 ```
-
-> Use ```react-native run-ios --configuration Release``` for release build (better performance).
-
-## Quick Start Android
-
-```
-git clone https://github.com/bberak/react-native-game-engine-handbook.git
-
-cd react-native-game-engine-handbook
-
-npm install
-
-react-native link
-
-# Download Android NDK version r15c from https://developer.android.com/ndk/downloads/index.html
-# Unzip the the NDK into /usr/local/share/android-ndk-r15c
-# IF you unzip into a different location, update the android/local.properties file with the correct path
-
-react-native run-android
-```
-
-> Installing a release build on an Android device is slightly more involved (requires signing). See [running on device](https://facebook.github.io/react-native/docs/running-on-device.html) for details.
 
 ## Pull Often!
 

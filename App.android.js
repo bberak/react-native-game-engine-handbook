@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import { AppRegistry, View, Modal } from "react-native";
+import { View, Modal } from "react-native";
 import CloseButton from "./app/table-of-contents/closeButton";
 import EStyleSheet from "react-native-extended-stylesheet";
 
 import TableOfContents from "./app/table-of-contents";
 import TouchChapter from "./app/touch-events";
 import PhysicsChapter from "./app/physics";
-import SensorsChapter from "./app/sensors";
+//import SensorsChapter from "./app/sensors";
 import ExamplesChapter from "./app/examples";
 import OpenGLChapter from "./app/opengl";
 
 EStyleSheet.build();
 
-export default class RNGEHandbook extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,7 +45,7 @@ export default class RNGEHandbook extends Component {
             items: [
               TouchChapter(this.mountScene),
               PhysicsChapter(this.mountScene),
-              SensorsChapter(this.mountScene),
+              //SensorsChapter(this.mountScene),
               OpenGLChapter(this.mountScene),
               ExamplesChapter(this.mountScene)
             ]
@@ -65,5 +65,3 @@ export default class RNGEHandbook extends Component {
     );
   }
 }
-
-AppRegistry.registerComponent('RNGEHandbook', () => RNGEHandbook);

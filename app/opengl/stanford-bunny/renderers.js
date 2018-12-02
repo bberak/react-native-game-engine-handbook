@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { WebGLView } from "react-native-webgl";
+import { GLView } from "expo";
 import REGL from "regl";
 import mat4 from "gl-mat4";
 import bunny from "bunny";
@@ -30,7 +30,7 @@ class ReglView extends PureComponent {
     if (this.state.frame) this.state.frame(this.props);
 
     return (
-      <WebGLView
+      <GLView
         style={this.props.style}
         onContextCreate={this.onContextCreate}
       />

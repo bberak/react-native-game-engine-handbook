@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { StyleSheet, View } from "react-native";
-import { Surface } from "gl-react-native";
+import { Surface } from "gl-react-expo";
 import { Node, Shaders, GLSL, Uniform, NearestCopy } from "gl-react";
 
 const shaders = Shaders.create({

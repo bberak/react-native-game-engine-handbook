@@ -14,7 +14,7 @@ import Title from "./title";
 import Heading from "./heading";
 import BackButton from "./backButton";
 import Item from "./item";
-import LinearGradient from "react-native-linear-gradient";
+import { LinearGradient } from "expo";
 import Logo from "./images/logo.png"
 
 export default class TableOfContents extends Component {
