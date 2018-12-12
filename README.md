@@ -17,7 +17,7 @@ A React Native app showcasing some examples using the lightweight [react-native-
 ```
 npm install -g expo-cli
 
-git clone https://github.com/bberak/react-native-game-engine-handbook.git#expo
+git clone -b expo https://github.com/bberak/react-native-game-engine-handbook.git
 
 cd react-native-game-engine-handbook
 
