@@ -17,7 +17,7 @@ A React Native app showcasing some examples using the lightweight [react-native-
 ```
 npm install -g expo-cli
 
-git clone -b expo https://github.com/bberak/react-native-game-engine-handbook.git
+git clone https://github.com/bberak/react-native-game-engine-handbook.git
 
 cd react-native-game-engine-handbook
 
@@ -26,6 +26,20 @@ npm install
 npm run start
 
 # Then follow the Expo prompts to run on a device or simulator
+```
+
+## Quick Start Non-Expo
+
+```
+git clone -b non-expo https://github.com/bberak/react-native-game-engine-handbook.git
+
+cd react-native-game-engine-handbook
+
+npm install
+
+react-native link
+
+react-native run-ios
 ```
 
 ## Pull Often!
