@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { GLView } from "expo";
+import { GLView } from "expo-gl";
 import REGL from "regl";
 import mat4 from "gl-mat4";
 import bunny from "bunny";
@@ -45,6 +45,9 @@ class ReglView extends PureComponent {
 }
 
 const WebglRenderer = (state, screen) => {
+  if (!state || !screen)
+    return null;
+
   return (
     <ReglView key={"WebglRenderer"} style={StyleSheet.absoluteFill}>
       {Object.keys(state)

@@ -12,6 +12,10 @@ import OpenGLChapter from "./app/opengl";
 
 EStyleSheet.build();
 
+//-- There is a bunch of warnings about the use of deprecated lifecycle methods. A lot of them are caused
+//-- by dependencies. Comment out the line below to see the warnings.
+console.disableYellowBox = true;
+
 export default class App extends Component {
   constructor(props) {
     super(props);

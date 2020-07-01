@@ -63,7 +63,7 @@ export default class BackButton extends Component {
 
 const css = EStyleSheet.create({
   container: {
-    marginLeft: Platform.OS === 'ios' ? -20 : undefined,
+    marginLeft: -20,
     marginRight: 20
   }
 });

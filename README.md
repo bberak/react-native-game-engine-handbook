@@ -28,20 +28,6 @@ npm run start
 # Then follow the Expo prompts to run on a device or simulator
 ```
 
-## Quick Start Non-Expo
-
-```
-git clone -b non-expo https://github.com/bberak/react-native-game-engine-handbook.git
-
-cd react-native-game-engine-handbook
-
-npm install
-
-react-native link
-
-react-native run-ios
-```
-
 ## Pull Often!
 
 The Handbook app will be updated with new examples and content from time to time - so make sure you do a ```git pull``` every now and then to get the latest and greatest.

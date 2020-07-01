@@ -14,7 +14,7 @@ import Title from "./title";
 import Heading from "./heading";
 import BackButton from "./backButton";
 import Item from "./item";
-import { LinearGradient } from "expo";
+import { LinearGradient } from "expo-linear-gradient";
 import Logo from "./images/logo.png"
 
 export default class TableOfContents extends Component {

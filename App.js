@@ -6,11 +6,15 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import TableOfContents from "./app/table-of-contents";
 import TouchChapter from "./app/touch-events";
 import PhysicsChapter from "./app/physics";
-//import SensorsChapter from "./app/sensors";
+////import SensorsChapter from "./app/sensors";
 import ExamplesChapter from "./app/examples";
 import OpenGLChapter from "./app/opengl";
 
 EStyleSheet.build();
+
+//-- There is a bunch of warnings about the use of deprecated lifecycle methods. A lot of them are caused
+//-- by dependencies. Comment out the line below to see the warnings.
+console.disableYellowBox = true;
 
 export default class App extends Component {
   constructor(props) {
@@ -45,7 +49,7 @@ export default class App extends Component {
             items: [
               TouchChapter(this.mountScene),
               PhysicsChapter(this.mountScene),
-              //SensorsChapter(this.mountScene),
+              ////SensorsChapter(this.mountScene),
               OpenGLChapter(this.mountScene),
               ExamplesChapter(this.mountScene)
             ]
