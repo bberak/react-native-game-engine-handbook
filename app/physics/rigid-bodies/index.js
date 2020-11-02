@@ -7,13 +7,8 @@ import Matter from "matter-js";
 
 Matter.Common.isElement = () => false; //-- Overriding this function because the original references HTMLElement
 
-export default class RigidBodies extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    const { width, height } = Dimensions.get("window");
+const RigidBodies = (props) => {
+  const { width, height } = Dimensions.get("window");
     const boxSize = Math.trunc(Math.max(width, height) * 0.075);
 
     const engine = Matter.Engine.create({ enableSleeping: false });
@@ -46,5 +41,6 @@ export default class RigidBodies extends Component {
 
       </GameEngine>
     );
-  }
 }
+
+export default RigidBodies
