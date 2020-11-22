@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { Box } from "./renderers";
 import Matter from "matter-js";
 
