@@ -28,6 +28,8 @@ npm run start
 # Then follow the Expo prompts to run on a device or simulator
 ```
 
+> For an even quicker start, [download the Expo Go app](https://expo.dev/client) and scan this [QR code with your mobile device](https://expo.dev/@bberak/react-native-game-engine-handbook).
+
 ## Pull Often!
 
 The Handbook app will be updated with new examples and content from time to time - so make sure you do a ```git pull``` every now and then to get the latest and greatest.
