@@ -28,7 +28,7 @@
     "react-native-animatable": "^1.2.2",
     "react-native-donkey-kong": "^0.5.1",
     "react-native-extended-stylesheet": "git+https://github.com/bberak/react-native-extended-stylesheet.git",
-    "react-native-game-engine": "^1.1.0",
+    "react-native-game-engine": "github:esphung/react-native-game-engine#master",
     "react-native-gesture-handler": "~2.14.0",
     "react-native-reanimated": "~3.6.2",
     "react-native-safe-area-context": "4.8.2",
